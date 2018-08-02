@@ -43,3 +43,6 @@ chown -R nginx.nginx /var/lib/php/session/;
 mkdir /var/run/php-fpm/;
 chown -R nginx.nginx /var/run/php-fpm/;
 systemctl start php-fpm;
+
+sudo firewall-cmd --zone=public --add-service=http --permanent;
+sudo firewall-cmd --reload;
